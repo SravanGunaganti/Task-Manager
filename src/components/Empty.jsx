@@ -72,8 +72,7 @@ function Empty() {
         <circle cx="50.4633" cy="23.5641" r="1.02564" fill="#4F46E5" />
       </svg>
       <div className="flex flex-col items-center">
-        <h2>Todo list is empty!</h2>
-        <p>You haven't added anything yet</p>
+        <p>You haven't added any task yet</p>
       </div>
     </div>
   );
