@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Outfit-md";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(../src/assets/fonts/Outfit-Medium.ttf);
+}
+
+
+@theme {
+  --font-self: "Outfit-md";
+  --color-brand: #ecf3ff;
+}
+body {
+  font-family: var(--font-self), sans-serif;
+}
