@@ -55,14 +55,15 @@ function App() {
     
   };
 
-  const toggleTodo = useCallback((id) => {
+  const toggleTodo = useCallback((id,isCompleted) => {
     toast.dismiss();
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
-    toast.success("Task Completed Successfully");
+   
+    !isCompleted?toast.success("Task Completed Successfully"):toast.warn("Task Marked as Pending");
   }, []);
 
   const deleteTodo = useCallback((id) => {

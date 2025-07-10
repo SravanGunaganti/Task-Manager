@@ -18,7 +18,7 @@ function ToDoItem({ todo, onToggle, onDelete, onEdit }) {
           type="checkbox"
           disabled={todo.isEditing}
           checked={todo.completed}
-          onChange={() => onToggle(todo.id)}
+          onChange={() => onToggle(todo.id,todo.completed)}
           className="sr-only peer"
         />
         <div
