@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import ToDoList from "./components/ToDoList";
 import Header from "./components/Header";
 import Empty from "./components/Empty";
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -27,9 +28,11 @@ function App() {
   };
 
   const addTodo = () => {
+    toast.dismiss();
     const value = title.trim();
     if (value === "") {
-      alert("Enter Task");
+      toast.dismiss();
+      toast.error("Please enter a task!");
       return;
     }
     if (editing !== null) {
@@ -39,26 +42,33 @@ function App() {
         )
       );
       setEditing(null);
+      toast.success("Task Updated Successfully");
     } else {
       setTodos((prevTodos) => [
         ...prevTodos,
         { id: Date.now(), title: value, completed: false, isEditing: false },
       ]);
+      toast.success("Task Added Successfully");
     }
 
     setTitle("");
+    
   };
 
   const toggleTodo = useCallback((id) => {
+    toast.dismiss();
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
+    toast.success("Task Completed Successfully");
   }, []);
 
   const deleteTodo = useCallback((id) => {
+    toast.dismiss();
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+    toast.success("Task Deleted Successfully");
   }, []);
 
   return (
@@ -92,6 +102,7 @@ function App() {
           )}
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={1000} limit={1} />
     </div>
   );
 }

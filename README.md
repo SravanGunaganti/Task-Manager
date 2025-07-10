@@ -14,7 +14,12 @@ Task Manager is a clean, responsive To-Do List app built using React (with Vite)
 - Add, delete, edit, and mark tasks as completed
 - Responsive, user-friendly UI with Tailwind CSS
 - Uses `map` for dynamic rendering with unique keys
-- Clean structure for learning and portfolio
+- Added Toast notifications for add, delete, marking as completed, update
+
+## Github Repository LInk
+
+[https://github.com/SravanGunaganti/Task-Manager.git](https://github.com/SravanGunaganti/Task-Manager.git)
+
 
 ## Installation Instructions
 
@@ -57,9 +62,6 @@ Open [http://localhost:5173](http://localhost:5173) in your browser to view the 
 - Event handling for add, delete, complete, and edit operations
 - Tailwind CSS for clean styling
 
-## Deployed Link
+## Live Link
 
-```
-https://sravan-task-manager.netlify.app
-```
-
+[https://sravan-task-manager.netlify.app](https://sravan-task-manager.netlify.app)
